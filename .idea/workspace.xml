@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeb55749-2f77-492c-b6bd-85fe3200a384" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/bridglabz/SnakeAndLadder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bridglabz/SnakeAndLadder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UC5WinningPosition100.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="UC1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -34,7 +40,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.UC5WinningPosition100">
     <configuration name="LadderSnake" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bridglabz.LadderSnake" />
       <module name="SnakeAndLadderGame" />
@@ -48,8 +54,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UC5WinningPosition100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UC5WinningPosition100" />
+      <module name="SnakeAndLadderGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UC5WinningPosition100" />
         <item itemvalue="Application.LadderSnake" />
       </list>
     </recent_temporary>
