@@ -1,0 +1,148 @@
+Index: src/UC5WinningPosition100.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class UC5WinningPosition100 {\r\n    public static final int  noPlay = 0;\r\n    public static final int  ladder = 1;\r\n    public static final int  snake = 2;\r\n    public static final int  winPosition = 100;\r\n    public static final int  positionCheck = 0;\r\n    public static void main(String[] args) {\r\n        System.out.println(\"Welcome to snake and ladder game\");\r\n        int numberOfDie=0;\r\n        int position = 0;\r\n        System.out.println(\"Position of the player: \"+ position);\r\n\r\n        while ( position < winPosition) {\r\n            if(position<0) {\r\n                position = 0;\r\n            }\r\n            else {\r\n                int die = (int)(Math.random()*6) + 1;\r\n                System.out.println(\"Number on die: \"+ die);\r\n                int ladderSnake = (int)(Math.random()*3) + 1;\r\n\r\n                switch(ladderSnake) {\r\n                    case noPlay:\r\n                        System.out.println(\"noPlay is come\");\r\n                        break;\r\n                    case ladder:\r\n                        if ((position+die)<=winPosition) {\r\n                            position=position+die;\r\n                        }\r\n                        System.out.println(\"Position of the player: \"+ position);\r\n                        numberOfDie++;\r\n                        break;\r\n                    case snake:\r\n\r\n                        position=position - die;\r\n                        if((position-die)<positionCheck) {\r\n                            position=positionCheck;\r\n                        }\r\n\r\n                        System.out.println(\"Position of the player: \"+ position);\r\n                        numberOfDie++;\r\n                        break;\r\n                }\r\n            }\r\n            System.out.println(\"Nummber of Die used: \"+ numberOfDie);\r\n        }\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/UC5WinningPosition100.java b/src/UC5WinningPosition100.java
+--- a/src/UC5WinningPosition100.java	(revision 8e52d55b588ada33b3ec27f525e7ea823b0a748c)
++++ b/src/UC5WinningPosition100.java	(date 1653496055435)
+@@ -4,46 +4,85 @@
+     public static final int  snake = 2;
+     public static final int  winPosition = 100;
+     public static final int  positionCheck = 0;
++    public static boolean  constant = true;
++
++
+     public static void main(String[] args) {
+         System.out.println("Welcome to snake and ladder game");
+         int numberOfDie=0;
+-        int position = 0;
+-        System.out.println("Position of the player: "+ position);
++        int player1Position = 0, player2Position=0;
+ 
+-        while ( position < winPosition) {
+-            if(position<0) {
+-                position = 0;
+-            }
+-            else {
+-                int die = (int)(Math.random()*6) + 1;
+-                System.out.println("Number on die: "+ die);
+-                int ladderSnake = (int)(Math.random()*3) + 1;
++        while ( player1Position < winPosition && player2Position < winPosition) {
++
++            int die = (int)(Math.random()*6) + 1;
++            numberOfDie++;
++
++            System.out.println("Number on die: "+ die);
++            int ladderSnake = (int)(Math.random()*3) + 1;
+ 
+-                switch(ladderSnake) {
+-                    case noPlay:
+-                        System.out.println("noPlay is come");
+-                        break;
+-                    case ladder:
+-                        if ((position+die)<=winPosition) {
+-                            position=position+die;
++            switch(ladderSnake) {
++                case noPlay:
++                    if(constant) {
++                        System.out.println("player1 chance skipped");
++                        constant=false;
++                    }else
++                    {
++                        System.out.println("player2 chance skipped");
++                        constant=true;
++                    }
++                    break;
++
++                case ladder:
++
++                    if(constant) {
++                        constant=false;
++                        if ((player1Position+die)<=winPosition) {
++                            player1Position=player1Position+die;
++                        }
++                        System.out.println("Position of the player1: "+ player1Position);
++//				numberOfDie++;
++                    }else
++                    {	constant=true;
++                        if ((player2Position+die)<=winPosition) {
++                            player2Position=player2Position+die;
+                         }
+-                        System.out.println("Position of the player: "+ position);
+-                        numberOfDie++;
+-                        break;
+-                    case snake:
++                        System.out.println("Position of the player2: "+ player2Position);
++//				 numberOfDie++;
++                    }
++                    break;
++                case snake:
++                    if(constant)	{
++                        constant=false;
++                        player1Position=player1Position - die;
++                        if((player1Position-die)<positionCheck) {
++                            player1Position=positionCheck;
++                        }
+ 
+-                        position=position - die;
+-                        if((position-die)<positionCheck) {
+-                            position=positionCheck;
++                        System.out.println("Position of the player1: "+ player1Position);
++//				numberOfDie++;
++                    }else
++                    {
++                        constant=true;
++                        player2Position=player2Position - die;
++                        if((player2Position-die)<positionCheck) {
++                            player2Position=positionCheck;
+                         }
+ 
+-                        System.out.println("Position of the player: "+ position);
+-                        numberOfDie++;
+-                        break;
+-                }
+-            }
+-            System.out.println("Nummber of Die used: "+ numberOfDie);
++                        System.out.println("Position of the player2: "+ player2Position);
++//				numberOfDie++;
++                    }
++                    break;
++            }
++        }
++        System.out.println("Nummber of Die used: "+ numberOfDie);
++
++        if(player1Position == 100) {
++
++            System.out.println("Player 1 won the game..................!");
++
++        } else {
++
++            System.out.println("Player 2 won the game..................!");
+         }
+     }
+ }
+-
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"aeb55749-2f77-492c-b6bd-85fe3200a384\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/SnakeAndLadder.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/UC6ReportPosition.java\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"UC6\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"ROOT_SYNC\" value=\"DONT_SYNC\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"29YvVfHKZcuytCOyBXrCJsZWTcm\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.SnakeAndLadder\">\r\n    <configuration name=\"LadderSnake\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.bridglabz.LadderSnake\" />\r\n      <module name=\"SnakeAndLadderGame\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.bridglabz.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SnakeAndLadder\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"SnakeAndLadder\" />\r\n      <module name=\"SnakeAndLadderGame\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UC6ReportPosition\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"UC6ReportPosition\" />\r\n      <module name=\"SnakeAndLadderGame\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UC6ReprtPositiom\" type=\"Application\" factoryName=\"Application\" temporary=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"UC5WinningPosition100\" />\r\n      <module name=\"SnakeAndLadderGame\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.SnakeAndLadder\" />\r\n      <item itemvalue=\"Application.UC6ReportPosition\" />\r\n      <item itemvalue=\"Application.LadderSnake\" />\r\n      <item itemvalue=\"Application.UC6ReprtPositiom\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.SnakeAndLadder\" />\r\n        <item itemvalue=\"Application.UC6ReportPosition\" />\r\n        <item itemvalue=\"Application.UC6ReprtPositiom\" />\r\n        <item itemvalue=\"Application.LadderSnake\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"aeb55749-2f77-492c-b6bd-85fe3200a384\" name=\"Changes\" comment=\"\" />\r\n      <created>1653302863185</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1653302863185</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8e52d55b588ada33b3ec27f525e7ea823b0a748c)
++++ b/.idea/workspace.xml	(date 1653496055848)
+@@ -2,9 +2,7 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="aeb55749-2f77-492c-b6bd-85fe3200a384" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/SnakeAndLadder.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/UC6ReportPosition.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/UC5WinningPosition100.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UC5WinningPosition100.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />

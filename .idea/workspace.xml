@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeb55749-2f77-492c-b6bd-85fe3200a384" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SnakeAndLadder2" beforeDir="false" afterPath="$PROJECT_DIR$/SnakeAndLadder2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UC5WinningPosition100.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UC5WinningPosition100.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +21,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UC1" />
+        <entry key="$PROJECT_DIR$" value="UC7_TwoPlayers" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -40,7 +42,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.UC5WinningPosition100">
+  <component name="RunManager" selected="Application.SnakeAndLadder">
     <configuration name="LadderSnake" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bridglabz.LadderSnake" />
       <module name="SnakeAndLadderGame" />
@@ -54,16 +56,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UC5WinningPosition100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SnakeAndLadder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SnakeAndLadder" />
+      <module name="SnakeAndLadderGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UC6ReportPosition" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="UC6ReportPosition" />
+      <module name="SnakeAndLadderGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UC6ReprtPositiom" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="UC5WinningPosition100" />
       <module name="SnakeAndLadderGame" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.SnakeAndLadder" />
+      <item itemvalue="Application.UC6ReportPosition" />
+      <item itemvalue="Application.LadderSnake" />
+      <item itemvalue="Application.UC6ReprtPositiom" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UC5WinningPosition100" />
+        <item itemvalue="Application.SnakeAndLadder" />
+        <item itemvalue="Application.UC6ReportPosition" />
+        <item itemvalue="Application.UC6ReprtPositiom" />
         <item itemvalue="Application.LadderSnake" />
       </list>
     </recent_temporary>
